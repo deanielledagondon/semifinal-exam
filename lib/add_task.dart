@@ -30,8 +30,6 @@ Future<TaskModel?> submitData(String title, bool status) async {
     return null;
   }
   return null;
-
-
 }
 
 class _AddTaskState extends State<AddTask> {
@@ -41,9 +39,6 @@ class _AddTaskState extends State<AddTask> {
 
   var title = TextEditingController();
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +46,7 @@ class _AddTaskState extends State<AddTask> {
         title: const Text('TO DO LIST'),
         centerTitle: true,
         titleTextStyle:
-        const TextStyle(color: Color.fromRGBO(255, 255, 255, 10)),
+            const TextStyle(color: Color.fromRGBO(255, 255, 255, 10)),
       ),
       body: Form(
         key: _formKey,

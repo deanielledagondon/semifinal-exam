@@ -92,7 +92,8 @@ class _EditTaskState extends State<EditTask> {
                       return;
                     }
                   },
-                  child: const Text('SUBMIT NEW TASK',
+                  child: const Text(
+                    'SUBMIT NEW TASK',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ),

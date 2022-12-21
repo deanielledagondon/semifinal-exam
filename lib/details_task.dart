@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'edit_task.dart';
 import 'add_task.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -9,17 +8,13 @@ import 'package:semifi_exam/custom_text.dart';
 class Details extends StatefulWidget {
   final int id_value;
 
-
   const Details({super.key, required this.id_value});
 
   @override
   State<Details> createState() => _DetailsState();
 }
 
-
-
 class _DetailsState extends State<Details> {
-
   String baseURL = 'https://jsonplaceholder.typicode.com/todos';
 
   dynamic getResponse = {};

@@ -6,18 +6,13 @@ import 'dart:core';
 import 'details_task.dart';
 
 class HomePage extends StatefulWidget {
-
-
   const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
-
-
 class _HomePageState extends State<HomePage> {
-
   String baseURL = 'https://jsonplaceholder.typicode.com/todos';
 
   List getResponse = <dynamic>[];
@@ -29,15 +24,14 @@ class _HomePageState extends State<HomePage> {
     if (response.statusCode == 200) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           backgroundColor: Colors.blueAccent,
-          content: Text(
-              'Success!'),
-      action: SnackBarAction(
-          label: 'DISMISS',
-          onPressed: () {
-            ScaffoldMessenger.of(context).hideCurrentSnackBar();
-          })));
+          content: Text('Success!'),
+          action: SnackBarAction(
+              label: 'DISMISS',
+              onPressed: () {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              })));
       setState(() {
-        getResponse = jsonDecode(response.body) as List <dynamic>;
+        getResponse = jsonDecode(response.body) as List<dynamic>;
       });
     } else {
       return null;
@@ -85,13 +79,15 @@ class _HomePageState extends State<HomePage> {
             activeColor: Colors.deepPurple,
             secondary: IconButton(
               onPressed: () async {
-                await Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => Details(id_value: getResponse[index]['id'])));
+                await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            Details(id_value: getResponse[index]['id'])));
               },
               icon: const Icon(Icons.notification_important),
               color: Colors.deepPurple,
             ),
-
             value: getResponse[index]['completed'],
             onChanged: (bool? value) {
               setState(() {
@@ -108,7 +104,6 @@ class _HomePageState extends State<HomePage> {
             builder: (_) => const AddTask(),
           );
         },
-
         tooltip: 'Add a new item!',
         child: const Icon(Icons.bookmark_add_outlined),
       ),

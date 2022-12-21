@@ -16,7 +16,6 @@ class CustomText extends StatelessWidget {
             height: 50,
             width: 100,
             child: Text(title),
-
           ),
           const VerticalDivider(
             width: 50,
